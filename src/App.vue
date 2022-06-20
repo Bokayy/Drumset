@@ -1,28 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Drums" src="./assets/Garageband.jpg">
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+class DrumKey {
+//properties
+template = `
+   <button class = ${this.instrument}>
+
+   </button>
+`;
+//properties
+
+
+//methods
+
+//methods
+
+}
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  data() {
+    // eslint-disable-next-line no-unused-labels
+    Snare: new DrumKey();
+  },
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+  img{
+    object-fit: cover;
+    height: 100vh;
+  }
+
 }
 </style>
