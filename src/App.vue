@@ -1,33 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Drums" src="./assets/Garageband.jpg">
+    <div id="drumkit">
+      <img alt="Drums" src="./assets/Garageband.jpg">
+      <button id="drumkit__instrument" class="crash">R</button>
+      <button id="drumkit__instrument" class="tomtom1">T</button>
+      <button id="drumkit__instrument" class="tomtom2">U</button>
+      <button id="drumkit__instrument" class="ride">I</button>
+      <button id="drumkit__instrument" class="hihat">F</button>
+      <button id="drumkit__instrument" class="snare">V</button>
+      <button id="drumkit__instrument" class="kick">B</button>
+      <button id="drumkit__instrument" class="floortom">N</button>
+    </div>
   </div>
 </template>
 
 <script>
 
-class DrumKey {
-//properties
-template = `
-   <button class = ${this.instrument}>
-
-   </button>
-`;
-//properties
-
-
-//methods
-
-//methods
-
-}
-
-
 export default {
   name: 'App',
+
   data() {
-    // eslint-disable-next-line no-unused-labels
-    Snare: new DrumKey();
   },
 }
 </script>
@@ -36,7 +28,6 @@ export default {
 body {
   margin: 0;
   padding: 0;
-
   height: 100%;
   width: 100%;
 }
@@ -48,10 +39,66 @@ body {
   text-align: center;
   color: #2c3e50;
 
-  img{
-    object-fit: cover;
-    height: 100vh;
-  }
+  #drumkit{
+    position: relative;
+    max-height: 95vh;
 
+    img{
+      object-fit: cover;
+      height: 99.5vh;
+    }
+
+    &__instrument{
+      $self: &;
+      height: 5rem;
+      width: 5rem;
+      position: absolute;
+      border: 3px solid white;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      background-color: rgb(75, 75, 75);
+    }
+
+    &--active{
+      border: yellow 5px solid;
+      text-shadow: 0px 0px 35px yellow;
+    }
+
+    .crash{
+      top: 12rem;
+      left: 13rem;
+    }
+
+    .tomtom1{
+      top:20rem;
+      left:38rem;
+    }
+    .tomtom2{
+      top:20rem;
+      left:64rem;
+    }
+    .ride{
+      top: 13rem;
+      left: 90rem;
+    }
+
+    .hihat{
+      top: 30rem;
+      left:13rem;
+    }
+
+    .snare{
+      top:50rem;
+      left: 20rem;
+    }
+    .kick{
+      top:50rem;
+      left: 51rem;
+    }
+    .floortom{
+      top:50rem;
+      left: 85rem;
+    }
+  }
 }
 </style>
