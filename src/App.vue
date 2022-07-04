@@ -15,21 +15,35 @@
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-vars
+import useSound from 'vue-use-sound'
+
 
 export default {
   name: 'App',
 
   data() {
   },
+  methods() {
+    setup: () =>{
+      const [play] = useSound(buttonSFX)
+
+      return {
+        play,
+      }
+    }
+
+  }
 }
 </script>
 
-<style scoped lang="scss">
-body {
+<style lang="scss">
+html {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
+  font-size: 150%;
 }
 
 #app {
@@ -38,6 +52,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  font-size:150%;
 
   #drumkit{
     position: relative;
@@ -49,20 +64,23 @@ body {
     }
 
     &__instrument{
-      $self: &;
+      //$self: &;
       height: 5rem;
       width: 5rem;
       position: absolute;
       border: 3px solid white;
       border-radius: 5px;
-      font-size: 1.5rem;
+      font-size: 4rem;
       background-color: rgb(75, 75, 75);
+
+      &:active{
+      border: yellow 5px solid;
+      text-shadow:-1px -1px 20px yellow;
+      }
+
     }
 
-    &--active{
-      border: yellow 5px solid;
-      text-shadow: 0px 0px 35px yellow;
-    }
+    
 
     .crash{
       top: 12rem;
